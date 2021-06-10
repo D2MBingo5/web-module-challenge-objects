@@ -49,9 +49,16 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
-}
+  discount(person){
+    if(person === "teacher" || person === "student"){
+      return (burger.price - (burger.price * 0.25));
+    }else{
+      return (burger.price - (burger.price * 0.10));
+    }
 
+  }
+}
+console.log(burger.discount("teacher"), burger.discount("public"));
 
 
 ///////////////Reviews (MVP)///////////////////
